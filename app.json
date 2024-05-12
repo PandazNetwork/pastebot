@@ -1,0 +1,60 @@
+{
+    "name": "Pastes.Dev Telegram Bot",
+    "description": "Make Your Own Pastes.Dev Bot to convert your text into link. Pastes.dev Telegram Bot.",
+    "keywords": [
+        "Host Text",
+        "Text to Link",
+        "Pastes.dev",
+        "Telegram Paste Bot"
+    ],
+    "website": "https://github.com/PandazNetwork/pastebot",
+    "repository": "https://github.com/PandazNetwork/pastebot",
+    "logo": "https://ibb.co/kMVxrCj",
+    "env": {
+        "API_ID": {
+            "description": "Your API Hash from my.telegram.org",
+            "required": true
+        },
+        "API_HASH": {
+            "description": "Your API ID from my.telegram.org",
+            "required": true
+        },
+        "BOT_TOKEN": {
+            "description": "Get it from @botfather",
+            "required": true
+        },
+        "FORCESUB": {
+            "description": "Channel id of updates channel from @my_id_bot",
+            "required": true
+        },
+        "ADMINS": {
+            "description": "seperate multiple ids with (,)",
+            "required": true
+        },
+        "SUPPORT": {
+            "description": "USERNAME OF SUPPORT BOT/CONTACT BOT/SUPPORT GROUP FOR EX:- @SUPPORTBOT",
+            "required": true
+        },
+        "DB_URI": {
+            "description": "get it from https://account.mongodb.com/account/login {chk youtube videos}",
+            "required": true
+        },
+        "DB_NAME": {
+            "description": "as per your need, else leave it empty",
+            "required": false
+        }
+    },
+    "addons": [],
+    "buildpacks": [
+        {
+            "url": "heroku/python"
+        }
+    ],
+    "formation": {
+        "worker": {
+            "quantity": 1,
+            "size": "standard-1x"
+        }
+    },
+    "stack": "heroku-22"
+}
