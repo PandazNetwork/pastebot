@@ -1,8 +1,8 @@
-import os
+import os, time
 from pyrogram import Client, filters
 from config import API_HASH, API_ID, BOT_TOKEN, ADMIN_IDS
 from utilis import paste_api, handle_forcesub
-from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message
 from database import db
 
 # Pyrogram bot setup
@@ -70,40 +70,40 @@ async def stats_command(client, message):
 
 # Define the command handler for text to link convert
 @bot.on_message(filters.private)
-async def handle_private_message(bot, message):
-    await handle_forcesub(bot, message)
-    db.add_user(message.from_user.id)
-    
-    if message.text:
-        paste_link = await paste_api(message.text)
-        
-        if paste_link:
-            await message.reply_text(f"{paste_link}")
-        else:
-            await message.reply_text("Failed to generate paste link")
-    elif message.reply_to_message and message.reply_to_message.document:
-        document = message.reply_to_message.document
-        
-        if document.file_name.endswith(".txt"):
-            file_path = await bot.download_media(document)
-            
-            print("File downloaded:", file_path)
-            
-            with open(file_path, "r", encoding="utf-8") as file:
+async def my_event_handler(client: Client, message: Message):
+    try:
+        await handle_forcesub(client, message)
+        db.add_user(message.from_user.id)
+
+        if message.document:
+            file_path = await message.download(f"temp/{time.time()}.txt")
+            with open(file_path, 'r') as file:
                 text = file.read()
-                
-            paste_link = await paste_api(text)
-            
-            if paste_link:
-                await message.reply_text(f"Paste link for the file: {paste_link}")
-            else:
-                await message.reply_text("Failed to generate paste link for the file")
-            
             os.remove(file_path)
         else:
-            await message.reply_text("Please send only text files (.txt)")
-
-
+            text = message.text
+        
+        url = await paste_api(text)
+        if url:
+            await client.send_message(
+                chat_id=message.chat.id,
+                text=url,
+                reply_to_message_id=message.id,  # Correct attribute
+                disable_web_page_preview=True
+            )
+        else:
+            await client.send_message(
+                chat_id=message.chat.id,
+                text="Something went wrong.",
+                reply_to_message_id=message.id  # Correct attribute
+            )
+    except Exception as e:
+        await client.send_message(
+            chat_id=message.chat.id,
+            text=f"Something went wrong: {str(e)}",
+            reply_to_message_id=message.id  # Correct attribute
+        )
+        
 print("[+] BOT STARTED")
 if __name__ == "__main__":
     bot.run()

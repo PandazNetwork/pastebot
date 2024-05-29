@@ -1,5 +1,5 @@
 # Pastes.dev Telegram Bot
-Make Your Own Pastes.Dev Bot to convert your text into link.
+Make Your Own Pastes.Dev Bot to convert your text & txt files into paste links. https://t.me/pastesdevbot
 ---
 ### Deploy On Heroku
 
@@ -9,8 +9,8 @@ Make Your Own Pastes.Dev Bot to convert your text into link.
 ### Features
 ```
 /start - To check bot is alive or not
-/stats - Get total number of users on bot.
-/send - reply to mesaage to broadcast it to users.
+/stats - Get total number of users on bot. [admin]
+/send - reply to mesaage to broadcast it to users. [admin]
 ```
 
 ---
@@ -24,11 +24,14 @@ Make Your Own Pastes.Dev Bot to convert your text into link.
 * `ADMINS`: Your id from [@my_id_bot](https://t.me/my_id_bot)
 * `DB_URI`: Get this value from [MongoDB] (https://account.mongodb.com/account/register)
 ---
-
 ### Features
 
 - Fully customisable.
-- Text to link shortner.
-- Pastes.dev Text To Link
-- Broadcast Feature (Send message to users).
-- Statistics Command (to cheack total users on bot).
+- Text to link converter.
+- Txt files to link converter.
+- Broadcast Feature (Send message to users). [admin only]
+- Statistics Command (to cheack total users on bot). [admin only]
+---
+### Bot On Telegram
+
+[![PastesDevBot](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.vecteezy.com%2Fpng%2F18930708-telegram-logo-png-telegram-icon-transparent-png&psig=AOvVaw2eMDDbHA_D__qH6Y1GgzNk&ust=1717072939908000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCPDZ4tjxsoYDFQAAAAAdAAAAABAE)](https://telegram.me/pastesdevbot)
