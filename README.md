@@ -34,4 +34,4 @@ Make Your Own Pastes.Dev Bot to convert your text & txt files into paste links. 
 ---
 ### Bot On Telegram
 
-[![PastesDevBot](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.vecteezy.com%2Fpng%2F18930708-telegram-logo-png-telegram-icon-transparent-png&psig=AOvVaw2eMDDbHA_D__qH6Y1GgzNk&ust=1717072939908000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCPDZ4tjxsoYDFQAAAAAdAAAAABAE)](https://telegram.me/pastesdevbot)
+[![Pastes Dev Bot](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.vecteezy.com%2Fpng%2F18930708-telegram-logo-png-telegram-icon-transparent-png&psig=AOvVaw2eMDDbHA_D__qH6Y1GgzNk&ust=1717072939908000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCPDZ4tjxsoYDFQAAAAAdAAAAABAE)](https://telegram.me/pastes_dev_bot)
