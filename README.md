@@ -1,5 +1,5 @@
 # Pastes.dev Telegram Bot
-Make Your Own Pastes.Dev Bot to convert your text & txt files into paste links. https://t.me/pastesdevbot
+Make Your Own Pastes.Dev Bot to convert your text & txt files into paste links.
 ---
 ### Deploy On Heroku
 
